@@ -78,3 +78,20 @@ console.log(true || 'test'); // true
 console.log(false || 'test'); // test
 console.log(true && true && 'test2'); // test2
 console.log(false || false && 'test2'); // false
+
+// null operator value ?? value
+// Assign right value when left value is null or undefined
+let name;
+console.log(name); // undefined
+name = name ?? 'name';
+console.log(name); // name
+name = name ?? 'name2';
+console.log(name); // name
+
+// Conditional Operator
+// condition ? true : false
+let name2;
+name2 = true ? 'true_name' : 'false_name'
+console.log(name2); // true_name
+name2 = false ? 'true_name' : 'false_name'
+console.log(name2); // false_name
