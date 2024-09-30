@@ -2,15 +2,15 @@ let age = 32;
 
 /**
  * Caution:
- * Be mindful when using strings and numbers together.
- * The '+' operator can result in concatenation if one of the operands is a string.
- * JavaScript will automatically convert types, which can lead to unexpected results.
+ * Be careful when combining strings and numbers.
+ * The '+' operator can concatenate if one operand is a string.
+ * JavaScript automatically converts types, leading to unexpected results.
  */
-console.log(age + ''); // String: "32"
-console.log('98' + 2); // String: "982" (concatenation)
-console.log('98' * 2); // Number: 196 (multiplication converts string to number)
+console.log(age + ''); // "32" (number converted to string)
+console.log('98' + 2); // "982" (concatenation)
+console.log('98' * 2); // 196 (string converted to number for multiplication)
 
-// So, how can we convert a type of value?
+// How to explicitly convert types:
 
 /**
  * 1. toString()
@@ -20,41 +20,40 @@ console.log(typeof age.toString()); // "string"
 console.log(typeof (99).toString()); // "string"
 console.log(typeof (true).toString()); // "string"
 
-// 1-1. You can use String(value) too.
+// 1-1. You can also use String(value).
 console.log(typeof String(99)); // "string"
 console.log(typeof String(true)); // "string"
 
-// 1-2. You can convert numbers to different base representations, such as binary, hexadecimal, etc.
-// The parameter in toString() defines the base (radix) from 2 to 36.
-console.log(typeof (10).toString(2), (10).toString(2)); // "string", "1010"
+// 1-2. Convert numbers to different base representations (e.g., binary, hexadecimal).
+console.log(typeof (10).toString(2), (10).toString(2)); // "string", "1010" (binary representation)
 
 /**
  * 2. parseInt()
  * Converts a string to an integer.
- * It will truncate decimal values.
+ * Decimal parts are discarded.
  */
-let number = parseInt('1.9'); // Result: 1 (decimal is dropped)
+let number = parseInt('1.9'); // 1
 console.log(typeof number, number); // "number", 1
 
-// 2-1. You can use Number(value) too.
+// 2-1. You can also use Number(value).
 console.log(typeof Number('1'), Number('1')); // "number", 1
 
 /**
  * 3. parseFloat()
  * Converts a string to a floating-point number.
  */
-number = parseFloat('1.2'); // Result: 1.2 (decimal is preserved)
+number = parseFloat('1.2'); // 1.2
 console.log(typeof number, number); // "number", 1.2
 
-// 3-1. You can use Number(value) too.
+// 3-1. You can also use Number(value).
 console.log(typeof Number('1.1'), Number('1.1')); // "number", 1.1
 
 /**
- * 4. Converting to Boolean type
- * In JavaScript, most values are "truthy" except for a few falsy values.
- * Falsy values: '', 0, null, undefined, NaN, and false.
- * Truthy values include non-empty strings, numbers other than 0, objects, arrays, etc.
- * The double negation (!!) converts any value to its Boolean equivalent.
+ * 4. Converting to Boolean
+ * In JavaScript, most values are "truthy" except for falsy values.
+ * Falsy values: '', 0, null, undefined, NaN, false.
+ * Truthy values include non-empty strings, non-zero numbers, objects, arrays, etc.
+ * Double negation (!!) converts a value to its Boolean equivalent.
  */
 console.log(!!''); // false (empty string)
 console.log(!!'0'); // true (non-empty string)
