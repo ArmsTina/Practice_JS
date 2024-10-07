@@ -6,17 +6,21 @@ I'm currently learning JavaScript with guidance from the following lecture, pres
 
 This README file and comments have been revised by ChatGPT.
 
+✅ This emoji indicates a completed chapter.
+
+▶️ This emoji indicates a chapter in progress.
+
 ## Table of Contents
 
 - [Sections](#sections)
-  - [1. Basic](#1-basic)
-  - [2. Class and OOP](#2-class-and-oop)
+  - [1. Basic](#1-basic) ✅
+  - [2. Class and OOP](#2-class-and-oop) ▶️
   - [3. Objects](#3-objects)
   - [4. Async Programming](#4-async-programming)
 
 ## Sections
 
-### 1. Basic
+### 1. Basic ✅
 
 This section covers the foundational aspects of JavaScript, ensuring a solid understanding of the language's core principles.
 
@@ -92,7 +96,7 @@ This section covers the foundational aspects of JavaScript, ensuring a solid und
   *Duration: 07:13*  
   Managing errors using try-catch blocks.
 
-### 2. Class and OOP
+### 2. Class and OOP ▶️
 
 Dive into object-oriented programming with JavaScript classes, inheritance, and more.
 
