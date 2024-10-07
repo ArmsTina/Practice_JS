@@ -57,6 +57,7 @@ members = ['Dong', 'Young', 'Yang'];
  */
 console.log(members.concat('Concat')); // ['Dong', 'Young', 'Yang', 'Concat']
 console.log(members); // ['Dong', 'Young', 'Yang']
+console.log(members.concat(['test1', 'test2', 'test3'])); // [ 'Dong', 'Young', 'Yang', 'test1', 'test2', 'test3' ]
 
 /**
  * slice(x, y) extracts(cut) elements from index x to y (not including y).
