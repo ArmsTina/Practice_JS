@@ -3,7 +3,7 @@
  * D: Don't
  * R: Repeat
  * Y: Yourself
- * 
+ *
  * The DRY principle encourages reusing existing functionality to avoid code repetition.
  */
 

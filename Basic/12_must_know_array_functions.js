@@ -43,8 +43,11 @@ console.log(members); // ['Dong', 'Young', 'Yang']
 console.log(members.splice(1, 2)); // ['Young', 'Yang']
 console.log(members); // ['Dong']
 
+/**
+ * Immutable functions
+ */
 
-// Immutable Functions
+// Reset to initial values
 members = ['Dong', 'Young', 'Yang'];
 
 /**
@@ -89,10 +92,71 @@ console.log(members.join('/')); // Dong/Young/Yang
 console.log(members.sort()); // ['Dong', 'Yang', 'Young']
 console.log(members.reverse()); // ['Young', 'Yang', 'Dong']
 
+// Reset to initial values
+members = ['Dong', 'Young', 'Yang'];
+
 // For sorting numbers, pass a compare function.
-// If a - b < 0, a comes before b.
-// If a - b > 0, b comes before a.
+// If a - b > 0, a comes after b.
+// If a - b < 0, b comes after a.
 // If a - b = 0, the order stays the same.
 let numbers = [1, 4, 6, 9, 2, 5];
 console.log(numbers.sort((a, b) => a - b)); // [1, 2, 4, 5, 6, 9] (ASC)
 console.log(numbers.sort((a, b) => b - a)); // [9, 6, 5, 4, 2, 1] (DESC)
+
+/**
+ * map()
+ * This function creates a new array populated with the results of calling a provided function on every element in the calling array.
+ * You can also access the index with the current element, for example,
+ * members.map((x, index) => `Index: ${index}, Name: ${x}`)
+ */
+console.log(members.map((x) => x)); // ['Dong', 'Young', 'Yang']
+console.log(members.map((x) => `name:${x}`)); // ['name:Dong', 'name:Young', 'name:Yang']
+console.log(members.map((x) => {
+    if (x === 'Yang') {
+        return `Last Name:${x}`;
+    } else {
+        return x;
+    }
+})); // ['Dong', 'Young', 'Last Name:Yang']
+
+/**
+ * filter()
+ * This function creates a new array with all elements that pass the test implemented by the provided function.
+ * You can also access the index with the current element, for example,
+ * numbers.filter((x, index) => x > 5 && index % 2 === 0)
+ */
+console.log(numbers.filter((x) => {
+    if (x > 5) {
+        return x;
+    }
+})); // [9, 6]
+
+/**
+ * find()
+ * This function returns the value of the first element in the array that satisfies the provided testing function.
+ * You can also access the index with the current element, for example,
+ * numbers.find((x, index) => x > 5 && index % 2 === 0)
+ */
+console.log(numbers.find((x) => x % 2)); // 9
+
+/**
+ * reduce()
+ * This function executes a reducer function on each element of the array,
+ * resulting in a single accumulated value.
+ * Syntax: reduce((accumulator, currentValue) => { ... }, initialValue)
+ */
+console.log(numbers.reduce((sum, n) => sum + n, 0));
+/**
+ * numbers = [9, 6, 5, 4, 2, 1]
+ * 1. Initialize sum to the initial value, 0.
+ * 2. Start with the first element, n = 9.
+ * 3. Add n to sum: sum = 0 + 9 = 9.
+ * 4. Move to the next element, n = 6.
+ * 5. Add n to sum: sum = 9 + 6 = 15.
+ * 6. Continue this process for each element:
+ *    - n = 5 → sum = 15 + 5 = 20
+ *    - n = 4 → sum = 20 + 4 = 24
+ *    - n = 2 → sum = 24 + 2 = 26
+ *    - n = 1 → sum = 26 + 1 = 27
+ * 7. After processing all elements, return the final sum: 27.
+ */
