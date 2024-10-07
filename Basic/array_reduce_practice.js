@@ -1,3 +1,8 @@
+/**
+ * Practice Problems from:
+ * https://coursework.vschool.io/array-reduce-exercises/
+ */
+
 function total(arr) {
     return arr.reduce((a,b) => a + b, 0);
  }
