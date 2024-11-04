@@ -13,7 +13,7 @@ class IdolModel{
     name = 'Default';
     year = 2024;
 
-    // If you use constructor, above part is not necessary, but recommended
+    // If you use constructor, initial values are not necessary, but recommended
     constructor(name, year){
         this.name = name;
         this.year = year;
@@ -34,6 +34,7 @@ yuJin.name = 'Dongyoung'
 yuJin.year = 1999
 console.log(yuJin); // IdolModel { name: 'Dongyoung', year: 1999 }
 
+// Using Constructor
 const young = new IdolModel('young', 1999);
 console.log(young); // IdolModel { name: 'young', year: 1999 }
 young.sayName(); // Hi! My name is young
