@@ -1,3 +1,7 @@
+/**
+ * Inheritance
+ */
+
 // Parent (super) class
 class IdolModel {
     name;
