@@ -15,7 +15,7 @@ This README file and comments have been revised by ChatGPT.
 - [Sections](#sections)
   - [1. Basic](Basic) ✅
   - [2. Class and OOP](Class%20and%20OOP) ✅
-  - [3. Objects](3-objects) ▶️
+  - [3. Objects](Objects) ▶️
   - [4. Async Programming](4-async-programming)
 
 ## Sections
