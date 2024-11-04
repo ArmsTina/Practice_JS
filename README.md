@@ -13,10 +13,10 @@ This README file and comments have been revised by ChatGPT.
 ## Table of Contents
 
 - [Sections](#sections)
-  - [1. Basic](#1-basic) ✅
-  - [2. Class and OOP](#2-class-and-oop) ▶️
-  - [3. Objects](#3-objects)
-  - [4. Async Programming](#4-async-programming)
+  - [1. Basic](Basic) ✅
+  - [2. Class and OOP](Class%20and%20OOP) ▶️
+  - [3. Objects](3-objects)
+  - [4. Async Programming](4-async-programming)
 
 ## Sections
 
