@@ -14,8 +14,8 @@ This README file and comments have been revised by ChatGPT.
 
 - [Sections](#sections)
   - [1. Basic](Basic) ✅
-  - [2. Class and OOP](Class%20and%20OOP) ▶️
-  - [3. Objects](3-objects)
+  - [2. Class and OOP](Class%20and%20OOP) ✅
+  - [3. Objects](3-objects) ▶️
   - [4. Async Programming](4-async-programming)
 
 ## Sections
@@ -96,7 +96,7 @@ This section covers the foundational aspects of JavaScript, ensuring a solid und
   *Duration: 07:13*  
   Managing errors using try-catch blocks.
 
-### 2. Class and OOP ▶️
+### 2. Class and OOP ✅
 
 Dive into object-oriented programming with JavaScript classes, inheritance, and more.
 
@@ -125,7 +125,7 @@ Dive into object-oriented programming with JavaScript classes, inheritance, and 
   *Duration: 13:12*  
   Practical exercises to reinforce class concepts.
 
-### 3. Objects
+### 3. Objects ▶️
 
 Comprehensive exploration of objects, their properties, prototypes, and more.
 
