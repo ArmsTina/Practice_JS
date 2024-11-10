@@ -1,22 +1,22 @@
 /**
- * Property Attribute
- * 
+ * Property Attributes
+ *
  * 1) Data Property - A property that holds a real value, consisting of a key and a value.
- * 2) Accessor Property - A property that does not hold a value itself but is composed of functions called when a value is retrieved or set (e.g., Getters and Setters).
+ * 2) Accessor Property - A property that does not hold a value itself but is defined with functions that are called when the value is accessed or set (e.g., Getters and Setters).
  */
 
 const yuJin = {
-    name: '안유진',
-    year: 2003,
-}
+  name: "안유진",
+  year: 2003,
+};
 
-// Output the attributes of the property
-console.log(Object.getOwnPropertyDescriptor(yuJin, 'name'));
-console.log(Object.getOwnPropertyDescriptor(yuJin, 'year'));
+// Output the attributes of the properties
+console.log(Object.getOwnPropertyDescriptor(yuJin, "name"));
+console.log(Object.getOwnPropertyDescriptor(yuJin, "year"));
 console.log(Object.getOwnPropertyDescriptors(yuJin));
 
 /**
- * Attribute Lists
+ * Attribute List
  * 1) value - The actual value of the property.
  * 2) writable - Indicates if the value can be modified.
  * 3) enumerable - Indicates if the property can be enumerated (e.g., using a for...in loop).
@@ -24,79 +24,84 @@ console.log(Object.getOwnPropertyDescriptors(yuJin));
  */
 
 const yuJin2 = {
-    name: '안유진',
-    year: 2003,
+  name: "안유진",
+  year: 2003,
 
-    get age() {
-        // new Date().getFullYear() = Get the current year from the local server
-        return new Date().getFullYear() - this.year;
-    },
+  get age() {
+    // new Date().getFullYear() gets the current year from the local system
+    return new Date().getFullYear() - this.year;
+  },
 
-    set age(age) {
-        return this.year = new Date().getFullYear() - age;
-    },
-}
+  set age(age) {
+    this.year = new Date().getFullYear() - age;
+  },
+};
+
 console.log(yuJin2);
 console.log(yuJin2.age);
 yuJin2.age = 32;
 console.log(yuJin2);
 console.log(Object.getOwnPropertyDescriptors(yuJin2));
 
-// Add a new key and value with attribute settings
-// If you add a key, e.g., yuJin2.height = 172, the default settings for writable, enumerable, and configurable are true
-Object.defineProperty(yuJin2, 'height', {
-    value: 172,
-    // If you don't specify the following attributes, they will default to false
-    writable: true,
-    enumerable: true,
-    configurable: true,
+// Add a new property with specific attribute settings
+// By default, properties added directly (e.g., yuJin2.height = 172) have writable, enumerable, and configurable set to true
+Object.defineProperty(yuJin2, "height", {
+  value: 172,
+  // If you don't specify the following attributes, they default to false
+  writable: true,
+  enumerable: true,
+  configurable: true,
 });
 console.log(yuJin2);
-console.log(Object.getOwnPropertyDescriptor(yuJin2, 'height'));
+console.log(Object.getOwnPropertyDescriptor(yuJin2, "height"));
 
-// Modify the existing value of a property
+// Modify existing property attributes
 // 1. writable
-Object.defineProperty(yuJin2, 'height', {
-    writable: false,
+// Specifies if the value can be modified
+Object.defineProperty(yuJin2, "height", {
+  writable: false,
 });
 yuJin2.height = 180;
-console.log(yuJin2); // height remains 172
+console.log(yuJin2); // height remains 172 because writable is false
 
 // 2. enumerable
+// Specifies if the property appears in for ... in loops
 console.log(Object.keys(yuJin2));
 for (let key in yuJin2) {
-    console.log(key);
+  console.log(key);
 }
 
-Object.defineProperty(yuJin2, 'height', {
-    enumerable: false,
+Object.defineProperty(yuJin2, "height", {
+  enumerable: false,
 });
 
-// height will no longer show up in loops
+// height will no longer appear in loops
 console.log(Object.keys(yuJin2));
 for (let key in yuJin2) {
-    console.log(key);
+  console.log(key);
 }
 console.log(yuJin2.height); // The property still exists
 
 // 3. configurable
-Object.defineProperty(yuJin2, 'height', {
-    writable: true,
-    configurable: false,
+// Specifies if the property attributes can be changed or the property deleted
+Object.defineProperty(yuJin2, "height", {
+  writable: true,
+  configurable: false,
 });
 yuJin2.height = 180;
 console.log(yuJin2.height); // 180
-Object.defineProperty(yuJin2, 'height', {
-    // Even if configurable is false, you can change writable from true to false
-    writable: false,
+
+Object.defineProperty(yuJin2, "height", {
+  // Even if configurable is false, writable can be set from true to false
+  writable: false,
 });
-console.log(Object.getOwnPropertyDescriptor(yuJin2, 'height'));
+console.log(Object.getOwnPropertyDescriptor(yuJin2, "height"));
 
 try {
-    Object.defineProperty(yuJin2, 'height', {
-        // However, you cannot change it back to writable: true
-        writable: true,
-    });
+  Object.defineProperty(yuJin2, "height", {
+    // However, you cannot set writable back to true when configurable is false
+    writable: true,
+  });
 } catch (e) {
-    console.log('Error, configurable is false.');
+  console.log("Error: cannot modify property, configurable is false.");
 }
