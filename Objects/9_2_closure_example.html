@@ -1,0 +1,18 @@
+<script>
+  /**
+   * Closure
+   *
+   * 상위 함수보다 하위 함수가 더 오래 살아있는 경우를 closure라고 한다.
+   */
+
+  function getNumber() {
+    var number = 5;
+    function innerGetNumber() {
+      return number;
+    }
+    return innerGetNumber; // without (), just return a function
+  }
+
+  const runner = getNumber();
+  console.log(runner()); // innerGetNumber가 getNumber 보다 더 오래 살아있음
+</script>

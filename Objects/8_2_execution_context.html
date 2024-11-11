@@ -1,0 +1,21 @@
+<script>
+  // Creation Phase -> Execution Phase
+  // In the Creation Phase, the JavaScript engine sets up memory for variables and functions.
+  // - Variables are initially set to `undefined` (hoisting), while function declarations are fully hoisted.
+  // - This is why variables and functions are accessible in their scope before actual execution starts.
+
+  // Execution Phase:
+  // In this phase, JavaScript assigns actual values to variables and runs code line-by-line.
+
+  var number1 = 20; // Variable `number1` is declared and then assigned 20 in the Execution Phase.
+  var number2 = 30; // Variable `number2` is declared and then assigned 30 in the Execution Phase.
+
+  function multiply(x, y) {
+    var result = x * y;
+    return result;
+  }
+  // Function `multiply` is hoisted with its full definition due to function declaration hoisting.
+
+  var result1 = multiply(number1, number2);
+  var result2 = multiply(100, 200);
+</script>

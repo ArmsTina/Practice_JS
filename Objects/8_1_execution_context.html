@@ -1,0 +1,26 @@
+<script>
+  // Call Stack - JavaScript uses an execution context stack
+  // Last-In-First-Out (LIFO) structure, meaning the last function added
+  // to the stack is the first to finish and be removed.
+
+  function one() {
+    console.log("run one");
+    console.log("run one finished");
+  }
+
+  function two() {
+    console.log("run two");
+    one(); // Calls function `one`, which gets added to the stack
+    console.log("run two finished");
+  }
+
+  function three() {
+    console.log("run three");
+    two(); // Calls function `two`, which gets added to the stack
+    console.log("run three finished");
+  }
+
+  // Starting the execution by calling `three`
+  // This will trigger a nested series of calls following the LIFO order
+  three();
+</script>
