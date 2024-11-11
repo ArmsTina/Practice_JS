@@ -15,8 +15,8 @@ This README file and comments have been revised by ChatGPT.
 - [Sections](#sections)
   - [1. Basic](Basic) ✅
   - [2. Class and OOP](Class%20and%20OOP) ✅
-  - [3. Objects](Objects) ▶️
-  - [4. Async Programming](4-async-programming)
+  - [3. Objects](Objects) ✅
+  - [4. Async Programming](Async%20Programming) ✅
 
 ## Sections
 
@@ -125,7 +125,7 @@ Dive into object-oriented programming with JavaScript classes, inheritance, and 
   *Duration: 13:12*  
   Practical exercises to reinforce class concepts.
 
-### 3. Objects ▶️
+### 3. Objects ✅
 
 Comprehensive exploration of objects, their properties, prototypes, and more.
 
@@ -166,7 +166,7 @@ Comprehensive exploration of objects, their properties, prototypes, and more.
   *Duration: 14:27*  
   Understanding closures and their applications.
 
-### 4. Async Programming
+### 4. Async Programming ✅
 
 Master asynchronous programming in JavaScript with callbacks, promises, and async/await.
 
